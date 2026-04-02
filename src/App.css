@@ -1,0 +1,248 @@
+/* Reset e configurações gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f8fafc;
+}
+
+.app-container {
+  max-width: 428px;
+  margin: 0 auto;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Bar */
+.status-bar {
+  background-color: #312e81;
+  color: white;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+/* Header Tabs */
+.header-tabs {
+  background-color: #f1f5f9;
+  display: flex;
+}
+
+.header-tab {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  font-size: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.header-tab.active {
+  color: #312e81;
+  font-weight: 600;
+  border-bottom: 2px solid #312e81;
+  background-color: white;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  background-color: #f8fafc;
+}
+
+/* QR Code */
+.qr-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.qr-code {
+  width: 250px;        /* tamanho da caixa */
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;    /* impede vazar */
+}
+
+.qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* mantém proporção sem cortar */
+}
+/* Description */
+.description {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 24px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* Info Cards */
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 100px;
+}
+
+.info-card {
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  border-left: 2px solid #312e81;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.info-card-content {
+  padding: 2px 10px;
+}
+
+.info-label {
+  color: #312e81;
+  font-weight: 600;
+  font-size: 11px;
+  margin-bottom: 1px;
+}
+
+.info-value {
+  color: #374151;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  background-color: #312e81;
+  padding: 12px 16px 8px;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a5b4fc;
+  transition: color 0.2s;
+  min-width: 60px;
+}
+
+.nav-tab.active {
+  color: white;
+}
+
+.nav-tab:hover {
+  color: #e0e7ff;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.nav-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Home Indicator */
+.home-indicator {
+  background-color: #312e81;
+  padding: 0 0 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.indicator-bar {
+  width: 128px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .app-container {
+    max-width: 100%;
+  }
+  
+  .main-content {
+    padding: 16px;
+  }
+  
+  .qr-code {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .qr-pattern {
+    width: 176px;
+    height: 176px;
+  }
+  
+  .qr-pixel {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-card:nth-child(2) { animation-delay: 0.15s; }
+.info-card:nth-child(3) { animation-delay: 0.2s; }
+.info-card:nth-child(4) { animation-delay: 0.25s; }
+.info-card:nth-child(5) { animation-delay: 0.3s; }
+.info-card:nth-child(6) { animation-delay: 0.35s; }
+.info-card:nth-child(7) { animation-delay: 0.4s; }
