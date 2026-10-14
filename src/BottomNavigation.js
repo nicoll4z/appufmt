@@ -50,7 +50,6 @@ const BottomNavigation = ({ activeTab, setActiveTab }) => {
       </div>
 
       <div className="home-indicator">
-        <div className="indicator-bar"></div>
       </div>
     </>
   );
