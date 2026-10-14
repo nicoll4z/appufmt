@@ -3,6 +3,7 @@ import QRCode from './QRCode';
 import InfoCard from './InfoCard';
 import BottomNavigation from './BottomNavigation';
 import StudentId from './StudentId';
+import Outer from './Outer';
 
 import './App.css';
 
