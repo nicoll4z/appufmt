@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   MapPin,
   BookMarked,
-  CircleCheck,
+  CheckCircle,
   UserCheck,
   Bell,
   LogOut,
@@ -23,7 +23,7 @@ export default function Outros() {
       titulo: "Cartilha de Acolhimento aos Calouros",
     },
     {
-      icon: CircleCheck,
+      icon: CheckCircle,
       titulo: "Termo de Uso",
     },
     {
