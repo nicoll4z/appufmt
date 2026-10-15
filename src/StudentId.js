@@ -18,7 +18,7 @@ const studentId = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="student-card">
       {/* Conteúdo principal */}
       <div className="main-content">
         <QRCode />

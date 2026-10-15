@@ -1,41 +1,64 @@
+
 import React, { useState } from 'react';
-import QRCode from './QRCode';
-import InfoCard from './InfoCard';
 import BottomNavigation from './BottomNavigation';
 import StudentId from './StudentId';
 import Outer from './Outer';
+import AcademicServices from './AcademicServices';
+import News from './News';
 
 import './App.css';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState('Pessoal');
-
-  const studentData = {
-    name: 'NICOLLAS KAUA PEREIRA REIS',
-    course: 'CIENCIA DA COMPUTACAO - BACHARELADO',
-    campus: 'CAMPUS CUIABÁ',
-    institution: 'UNIVERSIDADE FEDERAL DE MATO GROSSO',
-    situation: 'MATRICULADO NO PERÍODO',
-    registration: '202111310031',
-    currentPeriod: '20262'
-  };
+  const [activeTab, setActiveTab] = useState('Notícias');
+  const [personalTab, setPersonalTab] = useState('carteira');
+  const showingServices = activeTab !== 'Outros' && activeTab !== 'Notícias' && personalTab === 'servicos';
 
   return (
-    <div className="app-container">
-      {/* Header Tabs */}
-      <div className="header-tabs">
-         <button className="header-tab">
-          Serviços Acadêmicos
-        </button>
-        <button className="header-tab active">
-          Carteira de Estudante
-        </button>
+    <div className={`app-container${activeTab === 'Outros' ? ' app-container--outros' : ''}${showingServices ? ' app-container--servicos' : ''}`}>
+
+      {/* Conteúdo principal */}
+      <div className="app-content">
+
+        {activeTab === 'Outros' ? (
+          <Outer />
+        ) : activeTab === 'Notícias' ? (
+          <News />
+        ) : (
+          <>
+            {/* Cabeçalho da carteira */}
+            <div className="header-tabs">
+              <button
+                type="button"
+                className={`header-tab${personalTab === 'servicos' ? ' active' : ''}`}
+                onClick={() => setPersonalTab('servicos')}
+                aria-pressed={personalTab === 'servicos'}
+              >
+                Serviços Acadêmicos
+              </button>
+
+              <button
+                type="button"
+                className={`header-tab${personalTab === 'carteira' ? ' active' : ''}`}
+                onClick={() => setPersonalTab('carteira')}
+                aria-pressed={personalTab === 'carteira'}
+              >
+                Carteira de Estudante
+              </button>
+            </div>
+
+            {/* Carteira do estudante */}
+            {personalTab === 'servicos' ? <AcademicServices /> : <StudentId />}
+          </>
+        )}
+
       </div>
-       <StudentId />
-       <BottomNavigation 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
+
+      {/* Navegação inferior */}
+      <BottomNavigation
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
       />
+
     </div>
   );
 };

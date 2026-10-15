@@ -3,11 +3,11 @@ import {
   MapPin,
   BookMarked,
   CircleCheck,
-  UserRoundCheck,
+  UserCheck,
   Bell,
   LogOut,
 } from "lucide-react";
-import "./Outros.css";
+import "./Outer.css";
 
 export default function Outros() {
   const [notificacoes, setNotificacoes] = useState(true);
@@ -33,7 +33,7 @@ export default function Outros() {
         "Guias de Orientação para Estudantes e para Coordenadores de Curso",
     },
     {
-      icon: UserRoundCheck,
+      icon: UserCheck,
       titulo: "Alterar vínculo",
     },
   ];

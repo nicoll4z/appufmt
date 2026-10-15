@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Utensils, MapPin, User, MoreHorizontal } from 'lucide-react';
+import { NewsIcon, DiningIcon, MapIcon, PersonIcon, MoreIcon } from './NavigationIcons';
 
 const TabButton = ({ icon: Icon, label, isActive, onClick }) => (
   <button
@@ -17,31 +17,31 @@ const BottomNavigation = ({ activeTab, setActiveTab }) => {
       <div className="bottom-nav">
         <div className="nav-tabs">
           <TabButton
-            icon={Calendar}
+            icon={NewsIcon}
             label="Notícias"
             isActive={activeTab === 'Notícias'}
             onClick={() => setActiveTab('Notícias')}
           />
           <TabButton
-            icon={Utensils}
+            icon={DiningIcon}
             label="RU"
             isActive={activeTab === 'RU'}
             onClick={() => setActiveTab('RU')}
           />
           <TabButton
-            icon={MapPin}
+            icon={MapIcon}
             label="Mapa"
             isActive={activeTab === 'Mapa'}
             onClick={() => setActiveTab('Mapa')}
           />
           <TabButton
-            icon={User}
+            icon={PersonIcon}
             label="Pessoal"
             isActive={activeTab === 'Pessoal'}
             onClick={() => setActiveTab('Pessoal')}
           />
           <TabButton
-            icon={MoreHorizontal}
+            icon={MoreIcon}
             label="Outros"
             isActive={activeTab === 'Outros'}
             onClick={() => setActiveTab('Outros')}

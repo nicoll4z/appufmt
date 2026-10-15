@@ -1,0 +1,64 @@
+.app-container--servicos {
+  --academic-purple: var(--app-purple);
+}
+
+.academic-services {
+  padding: 34px 4.1% 24px;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.academic-services-header {
+  padding-bottom: 21px;
+  border-bottom: 1px solid #d9d9de;
+}
+
+.academic-services-header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #353535;
+}
+
+.academic-services-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+.academic-services-option {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 2px;
+  border: 0;
+  background: transparent;
+  color: var(--academic-purple);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.academic-services-option span {
+  color: #202020;
+  font-size: 14px;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.academic-services-option:focus-visible {
+  outline: 2px solid var(--academic-purple);
+  outline-offset: 2px;
+}
+
+.academic-services-message {
+  margin-top: 12px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
